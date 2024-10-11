@@ -123,6 +123,7 @@ namespace InitOnlyProperties
              *  Structures  -->  value Type (valeur = les valeurs des champs)
              *  Class       -->  Reference Type (valeur = adresse de l'objet)
              *  list<>      -->  Reference type (valeur = adresse de l'objet)
+             *  records     -->  Reference Type avec des fonctionnalités Value Type
             */
         }
     }
