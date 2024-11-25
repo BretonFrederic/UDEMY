@@ -5,13 +5,13 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using pizza_mama.Data;
+using pizza_mama_v1.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace pizza_mama
+namespace pizza_mama_v1
 {
     public class Startup
     {
@@ -28,7 +28,9 @@ namespace pizza_mama
             // IOC -> Inversion Of Control -> créer des instances ou conserver des instances uniques (singleton)
             // DataContextInstance = new DataContext
             services.AddDbContext<DataContext>(options =>
+            // ATTENTION utilisation UseSqlite en développement PAS en production
             options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
+
             services.AddRazorPages();
         }
 

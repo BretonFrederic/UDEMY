@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace pizza_mama.Pages
+namespace pizza_mama_v1.Pages
 {
     public class IndexModel : PageModel
     {

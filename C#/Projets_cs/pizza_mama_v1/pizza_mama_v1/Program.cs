@@ -3,13 +3,13 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using pizza_mama.Data;
+using pizza_mama_v1.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace pizza_mama
+namespace pizza_mama_v1
 {
     public class Program
     {
@@ -27,6 +27,7 @@ namespace pizza_mama
                 {
                     webBuilder.UseStartup<Startup>();
                 });
+
         private static void CreateDbIfNotExists(IHost host)
         {
             using (var scope = host.Services.CreateScope())

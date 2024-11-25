@@ -1,8 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using pizza_mama.Models;
-using System.Collections.Generic;
+using pizza_mama_v1.Models;
 
-namespace pizza_mama.Data
+namespace pizza_mama_v1.Data
 {
     public class DataContext : DbContext
     {
