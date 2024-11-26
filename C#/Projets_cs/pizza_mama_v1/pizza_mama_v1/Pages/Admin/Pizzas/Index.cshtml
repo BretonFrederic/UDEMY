@@ -2,13 +2,13 @@
 @model pizza_mama_v1.Pages.Admin.Pizzas.IndexModel
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Administration des pizzas";
 }
-
-<h1>Index</h1>
+<!--On donne à h1 le même nom que le titre de l'onglet-->
+<h1>@ViewData["Title"]</h1>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="Create">Nouveau</a>
 </p>
 <table class="table">
     <thead>
@@ -32,12 +32,14 @@
 @foreach (var item in Model.Pizza) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.nom)
+                <!--DisplayFor permet à tous les types de s'afficher syntaxe possible ci-dessous' -->
+                    @item.nom
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.prix)
             </td>
             <td>
+                <!--Dans le cas d'une boolean DisplayFor permet d'avoir une checkbox vegetarienne vrai ou faux-->
                 @Html.DisplayFor(modelItem => item.vegetarienne)
             </td>
             <td>
