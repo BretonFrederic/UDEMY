@@ -5,6 +5,13 @@
 
 <h1>Vous devez vous authentifier</h1>
 
+@if(Model.displayInvalidAccountMessage)
+{
+    <br />
+    <div class="alert alert-danger" role="alert">
+        ERREUR : Ce compte est invalide
+    </div>
+}
 <br />
 
 <form method="post">

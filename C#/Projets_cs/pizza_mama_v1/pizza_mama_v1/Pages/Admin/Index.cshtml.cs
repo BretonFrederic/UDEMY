@@ -6,19 +6,38 @@ using System;
 using System.Collections.Generic;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Configuration;
 
 namespace pizza_mama_v1.Pages.Admin
 {
     public class IndexModel : PageModel
     {
-        public void OnGet()
+        public bool displayInvalidAccountMessage = false;
+        IConfiguration configuration;
+        public IndexModel(IConfiguration configuration)
         {
+            this.configuration = configuration;
+        }
+
+        public IActionResult OnGet()
+        {
+            if (HttpContext.User.Identity.IsAuthenticated)
+            {
+                return Redirect("/Admin/Pizzas");
+            }
+            return Page();
         }
 
         public async Task<IActionResult> OnPostAsync(string username, string password, string ReturnUrl)
         {
-            if(username == "admin")
+            var authSection = configuration.GetSection("Auth");
+
+            string adminLogin = authSection["Adminlogin"];
+            string adminPassword = authSection["AdminPassword"];
+
+            if ((username == adminLogin)&&(password == adminPassword))
             {
+                displayInvalidAccountMessage = false;
                 var claims = new List<Claim> {
                     new Claim(ClaimTypes.Name, username)
                 };
@@ -27,7 +46,13 @@ namespace pizza_mama_v1.Pages.Admin
                 // Si authentification réussie on redirige vers Admin/Pizzas par défaut sinon vers l'url demandée
                 return Redirect(ReturnUrl == null ? "/Admin/Pizzas" : ReturnUrl);
             }
+            displayInvalidAccountMessage = true;
             return Page();
+        }
+        public async Task<IActionResult> OnGetLogout()
+        {
+            await HttpContext.SignOutAsync();
+            return Redirect("/Admin");
         }
     }
 }
