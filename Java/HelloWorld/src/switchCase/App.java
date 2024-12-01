@@ -50,5 +50,6 @@ public class App {
             default :
                 System.out.println("Ce mois n'existe pas !");
         }
+        userInput.close();
     }
 }

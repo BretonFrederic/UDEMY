@@ -26,7 +26,7 @@ public class App {
             default:
                 System.out.printf( "Le programme ne peut pas fournir de résultat pour %d", nbPlanetes);
         }
-
+        userInput.close();
         /* FIN PROGRAMME */
     }
 }

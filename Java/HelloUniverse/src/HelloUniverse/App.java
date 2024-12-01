@@ -30,7 +30,7 @@ public class App {
             }
             System.out.printf(phraseIntroduction,annee,nbPlanetes);
         }
-
+        userInput.close();
         /* FIN PROGRAMME */
     }
 }
