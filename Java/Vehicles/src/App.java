@@ -11,7 +11,7 @@ public class App {
         boolean egauxOuPas = chaine1.equals(chaine2);
         System.out.println(egauxOuPas);
 
-        int nouvelleVitesse = voitureDeMichel.accelerer(50);
+        int nouvelleVitesse = voitureDeMichel.Accelerer(50);
         System.out.println("La nouvelle vitesse est de "+nouvelleVitesse);
 
         Voiture voitureDeJerome = new Voiture();
@@ -30,5 +30,14 @@ public class App {
         moteurDiesel.nbCylindres = 8;
 
         System.out.println("Le nombre de cylindre de la voiture de Jérôme est " + voitureDeJerome.moteur.nbCylindres);
+        System.out.println("Le nombre de cylindre de la voiture de Michel est " + voitureDeMichel.moteur.nbCylindres);
+
+        Passager passager = new Passager();
+        passager.nom = "Dupont";
+        passager.prenom = "Vincent";
+        Ville auckland = new Ville();
+        auckland.nom = "Auckland";
+        Ville destination = voitureDeMichel.Transporter(passager, auckland);
+        System.out.println("Le passager est arrivé dans la ville de " + destination.nom);
     }
 }
