@@ -11,5 +11,12 @@
         <h1>Menu des pizzas</h1>
 
         <a asp-page="Index">Retour à l'accueil</a>
+
+        <ul>
+            @foreach(var pizza in Model.Pizza)
+            {
+                <li>@pizza.nom - @pizza.prix €</li>
+            }
+        </ul>
     </body>
 </html>
