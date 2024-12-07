@@ -1,4 +1,4 @@
-package HelloUnverse_overloading;
+package HelloUniverse_overloading;
 
 public class Planete {
     String nom;
