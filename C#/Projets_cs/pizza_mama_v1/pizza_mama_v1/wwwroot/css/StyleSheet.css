@@ -2,15 +2,16 @@
     color:blue;
 }
 
-body{
-    background:url("/images/menu_background.jpg") no-repeat center center fixed;
-    -webkit-background-size:cover;
-    -moz-background-size:cover;
-    -o-background-size:cover;
-    background-size:cover;
-    font-family:Arial;
-    margin:0px;
-    color:white;
+body {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("/images/menu_background.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-family: Arial;
+    margin: 0px;
+    color: white;
+    back
 }
 
 #small_logo{
@@ -53,4 +54,17 @@ h1{
     font-size:14px;
     display:block;
     margin-top:4px;
+    width:380px;
+}
+
+.menu_list_vegetarienne {
+    color: black;
+    font-size: 9px;
+    font-weight:bold;
+    text-transform: uppercase;
+    background-color: #DD7835;
+    border-radius: 8px;
+    padding:3px 8px;
+    display:inline-block;
+    margin-top:6px;
 }
