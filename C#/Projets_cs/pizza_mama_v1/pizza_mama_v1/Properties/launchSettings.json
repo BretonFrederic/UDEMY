@@ -3,7 +3,6 @@
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "MenuPizzas",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
@@ -11,7 +10,6 @@
     "pizza_mama_v1": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "MenuPizzas",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
